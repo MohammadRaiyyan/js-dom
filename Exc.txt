@@ -1,0 +1,211 @@
+
+1. Add a New List Item Before the Last Item
+Question:
+Insert a new list item with the text "New Item" before the last item in the unordered list.
+
+Setup (HTML):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="insertBeforeLast">Insert Before Last Item</button>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use createElement to create a new <li> element.
+Use insertBefore to insert the new element before the last item.
+You can get the last item by accessing the last child of the list.
+
+2. Remove All Children of a Specific Element
+Question:
+When the button is clicked, remove all child elements inside the div with the id "container".
+
+Setup (HTML):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div id="container">
+        <p>Child 1</p>
+        <p>Child 2</p>
+        <p>Child 3</p>
+    </div>
+    <button id="removeChildren">Remove All Children</button>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use the innerHTML property to clear all content inside an element quickly.
+Alternatively, you can loop through and remove each child node using removeChild.
+
+3. Move an Element from One Parent to Another
+Question:
+Move the div with the id "moveMe" from its current parent to the div with the id "targetContainer" when the button is clicked.
+
+Setup (HTML):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div id="originalContainer">
+        <div id="moveMe">Move me!</div>
+    </div>
+    <div id="targetContainer"></div>
+    <button id="moveElement">Move Element</button>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use appendChild to move an element to a new parent.
+An element can only be in one place in the DOM at a time, so it will automatically be removed from its original parent when added to the new parent.
+
+4. Swap Two Sibling Elements
+Question:
+Swap the position of two sibling elements, the two div elements with the ids "box1" and "box2", when the button is clicked.
+
+Setup (HTML):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div id="box1" style="background-color: lightcoral;">Box 1</div>
+    <div id="box2" style="background-color: lightblue;">Box 2</div>
+    <button id="swapBoxes">Swap Boxes</button>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use parentNode to access the parent element of both boxes.
+Use replaceChild to swap the two elements.
+Make sure to temporarily store one element to avoid losing it when you replace it.
+
+5. Insert an Element After a Specific Sibling
+Question:
+Insert a new paragraph with the text "Inserted After" after the paragraph with the id "para1".
+
+Setup (HTML):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <p id="para1">This is paragraph 1.</p>
+    <p>This is paragraph 2.</p>
+    <button id="insertAfter">Insert After Para 1</button>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use createElement to create a new <p> element.
+Since there is no insertAfter method in JavaScript, you can use insertBefore with the nextSibling of para1 to achieve the same effect.
+
+6. Highlight Parent Element on Click
+Question:
+When any list item inside the ul is clicked, highlight its parent ul by changing its background color to yellow.
+
+Setup (HTML):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use addEventListener to listen for click events on each li.
+Inside the event listener, use parentNode to access the parent ul and change its style properties to set the background color.
+
+7. Count and Display Number of Children
+Question:
+When the button is clicked, count the number of children inside the div with the id "countContainer" and display the count in the span with the id "childCount".
+
+Setup (HTML):
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div id="countContainer">
+        <p>Child 1</p>
+        <p>Child 2</p>
+        <p>Child 3</p>
+    </div>
+    <p>Number of children: <span id="childCount">0</span></p>
+    <button id="countChildren">Count Children</button>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use children property to get all child elements of the div.
+The length of the children property will give you the number of children.
+Update the text content of the span to display this count.
+
+8. Replace a Child Element
+Question:
+Replace the second paragraph inside the div with the id "replaceContainer" with a new paragraph that has the text "New Paragraph".
+
+Setup (HTML):
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <div id="replaceContainer">
+        <p>Paragraph 1</p>
+        <p>Paragraph 2 (to be replaced)</p>
+        <p>Paragraph 3</p>
+    </div>
+    <button id="replacePara">Replace Second Paragraph</button>
+    <script src="script.js"></script>
+</body>
+</html>
+Hint:
+Use children property to access the second paragraph inside the div.
+Use replaceChild to replace the old paragraph with the newly created one.
